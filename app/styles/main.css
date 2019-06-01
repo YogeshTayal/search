@@ -2,10 +2,6 @@ body {
   padding: 0;
 }
 
-.container {
-  max-width: 730px;
-}
-
 .search-main {
   position: relative;
   width: 30em;

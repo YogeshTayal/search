@@ -1,13 +1,4 @@
 <div class="search-main" data-ng-init="main.getUsers()">
-  <!-- <input type="text" ng-model="main.customSelected" placeholder="Search users by ID, address, name"
-  uib-typeahead="user as user.name for user in main.users | filter:$viewValue"
-  typeahead-template-url="customTemplate.html" class="form-control search-box"
-  typeahead-show-hint="true"
-  typeahead-min-length="0">
-  <span class="clear-icon"
-    title="Clear search"
-    ng-click="main.clear()">&#10005;</span> -->
-
   <div class="search-parent">
     <span class="search-icon">&#128269;</span>
     <input ng-model="main.searchText" class="search-box" ng-keyup="main.keyPressed($event)"
@@ -35,16 +26,3 @@
     </li>
   </ul>
 </div>
-
-<script type="text/ng-template" id="customTemplate.html">
-  <a>
-    <strong><h4>{{match.model.id}}</h4></strong>
-    <i>
-      <p class="uib-typeahead-matched-label"
-        ng-bind-html="match.label | uibTypeaheadHighlight:query">
-    </p>
-    </i>
-    <p>{{match.model.address}}</p>
-    <p>{{match.model.pincode}}</p>
-  </a>
-</script>
