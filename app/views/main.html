@@ -1,0 +1,50 @@
+<div class="search-main" data-ng-init="main.getUsers()">
+  <!-- <input type="text" ng-model="main.customSelected" placeholder="Search users by ID, address, name"
+  uib-typeahead="user as user.name for user in main.users | filter:$viewValue"
+  typeahead-template-url="customTemplate.html" class="form-control search-box"
+  typeahead-show-hint="true"
+  typeahead-min-length="0">
+  <span class="clear-icon"
+    title="Clear search"
+    ng-click="main.clear()">&#10005;</span> -->
+
+  <div class="search-parent">
+    <span class="search-icon">&#128269;</span>
+    <input ng-model="main.searchText" class="search-box" ng-keyup="main.keyPressed($event)"
+      placeholder="Search users by ID, address, name" autofocus/>
+    <span class="clear-icon"
+      title="Clear search"
+      ng-click="main.clear()">&#10005;</span>
+  </div>
+  <ul class="results" ng-show="main.searchText && main.searchText.trim()">
+    <li scroll-me ng-repeat="user in main.filteredUsers = ( main.users | filter: main.searchText )"
+      ng-mouseover="main.hovered($index)"
+      ng-class="{selected: $index === main.selectedRow}"
+      class="result-row"
+      ng-click="main.selectRow($index)">
+      <strong><h4>{{user.id}}</h4></strong>
+      <i>
+        <p>{{user.name}}</p>
+      </i>
+      <p class="items" ng-show="main.matchInItems(main.searchText, user.items)">"{{main.searchText}}" found in items</p>
+      <p>{{user.address}}</p>
+      <p>{{user.pincode}}</p>
+    </li>
+    <li class="no-result" ng-hide="main.filteredUsers.length">
+      <strong><h2>No User Found</h2></strong>
+    </li>
+  </ul>
+</div>
+
+<script type="text/ng-template" id="customTemplate.html">
+  <a>
+    <strong><h4>{{match.model.id}}</h4></strong>
+    <i>
+      <p class="uib-typeahead-matched-label"
+        ng-bind-html="match.label | uibTypeaheadHighlight:query">
+    </p>
+    </i>
+    <p>{{match.model.address}}</p>
+    <p>{{match.model.pincode}}</p>
+  </a>
+</script>

@@ -1,0 +1,177 @@
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body {
+  padding: 0;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 10px;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+  padding-bottom: 19px;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+.jumbotron .btn {
+  font-size: 21px;
+  padding: 14px 24px;
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+
+/* [uib-typeahead-popup].dropdown-menu {
+  max-height: 20em;
+  overflow-y: auto;
+} */
+
+/* .uib-typeahead-matched-label strong {
+  color: blue;
+} */
+
+/* .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
+  background-color: #FAD38B;
+  color: inherit;
+} */
+
+.search-main {
+  position: relative;
+  width: 30em;
+  margin: 2em auto;
+  box-shadow: lightgrey 0px 0px 6px 0px;
+}
+
+/* 
+[uib-typeahead-popup].dropdown-menu {
+  width: 100%;
+} */
+
+.results {
+  list-style: none;
+  padding: 0;
+  margin-top: 0;
+  width: 100%;
+  max-height: 21em;
+  overflow-y: auto;
+}
+
+.result-row {
+  cursor: pointer;
+  padding: 1em 2em;
+}
+
+.result-row:not(:first-child) {
+  border-top: 0.5px solid lightgrey;
+}
+
+.search-parent {
+  border: 1px solid lightgrey;
+  position: relative;
+  height: 36px;
+}
+
+.search-box {
+  width: calc(100% - 70px);
+  height: calc(100% - 2px);
+  outline: none;
+  border: none;
+  float: left;
+}
+
+.selected {
+  background-color: #FAD38B;
+}
+
+.search-icon {
+  padding: 9px 8px;
+  float: left;
+}
+
+.clear-icon {
+  float: right;
+  font-size: 1.6em;
+  line-height: 1.6;
+  padding: 0 6px;
+  color: gray;
+  cursor: pointer;
+}
+
+h4, p {
+  margin: 3px;
+}
+
+h4 {
+  text-transform: uppercase;
+}
+
+.items {
+  border-top: 0.5px solid lightgrey;
+  border-bottom: 0.5px solid lightgrey;
+  padding: 4px;
+}
+
+.no-result {
+  padding: 2em;
+}
