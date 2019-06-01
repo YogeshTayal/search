@@ -13,11 +13,12 @@ angular.module('searchApp')
       link: function postLink(scope, element) {
         scope.$on('scroll', function(e, data) {
           if (data.selectedRow === scope.$index) {
-            if (element.offset().top < element.parent().offset().top) {
-              element.parent().scrollTop(element.offset().top);
+            if (element.offset().top < element.parent().offset().top && data.direction === 'up') {
+              element.parent().scrollTop(element.parent().scrollTop() - (element.parent().offset().top - element.offset().top));
             }
-            if (element.offset().top + element.height() > element.parent().offset().top + element.parent().height()) {
-              element.parent().scrollTop(element.parent().offset().top + element.parent().height() - element.offset().top + element.height());
+            if (element.offset().top + element[0].offsetHeight > element.parent().offset().top + element.parent()[0].offsetHeight
+              && data.direction === 'down') {
+              element.parent().scrollTop(element.parent().scrollTop() + (element.offset().top - element.parent().offset().top));
             }
           }
         });

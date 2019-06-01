@@ -25,11 +25,11 @@ angular.module('searchApp')
       switch (e.which) {
         case 40:
           self.selectedRow = Math.min(self.selectedRow + 1, self.filteredUsers.length - 1);
-          $scope.$broadcast('scroll', { selectedRow: self.selectedRow });
+          $scope.$broadcast('scroll', { selectedRow: self.selectedRow, direction: 'down' });
           break;
         case 38:
           self.selectedRow = Math.max(0, self.selectedRow - 1);
-          $scope.$broadcast('scroll', { selectedRow: self.selectedRow });
+          $scope.$broadcast('scroll', { selectedRow: self.selectedRow, direction: 'up' });
           break;
         case 13:
           if (self.selectedRow > -1) {
