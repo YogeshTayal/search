@@ -43,7 +43,7 @@ angular.module('searchApp')
       }
     };
 
-    this.selectRow = function (index) {
+    this.selectRow = function () {
       self.searchText = self.filteredUsers[self.selectedRow].name;
       self.selectedRow = -1;
     };
